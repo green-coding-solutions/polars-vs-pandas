@@ -1,0 +1,23 @@
+---
+name: Polars data handling
+author: Arne Tarara <arne@green-coding.io>
+description: Use Polars for a file import and column operations
+
+services:
+  polars:
+    image: pandas/pandas@sha256:98360ed7ecf59273b558b2551a3586d7db44f89ebbc3484cdb814f5afb536699
+    setup-commands:
+      - pip install polars==1.9.0
+
+flow:
+  - name: Polars Warmup
+    container: polars
+    commands:
+      - type: console
+        command: python3 /tmp/repo/polars_test.py
+
+  - name: Polars GO
+    container: polars
+    commands:
+      - type: console
+        command: python3 /tmp/repo/polars_test.py

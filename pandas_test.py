@@ -8,4 +8,4 @@ df['difference'] = df['difference'].fillna(1)
 
 print('Any different?', (df['difference'] > 0).any())
 
-print('Mean:', df.difference.mean())
+print('Mean:', df['difference'].mean())

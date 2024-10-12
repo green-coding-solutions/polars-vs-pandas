@@ -5,7 +5,9 @@ description: Use Pandas for a file import and column operations
 
 services:
   pandas:
-    image: pandas/pandas@sha256:98360ed7ecf59273b558b2551a3586d7db44f89ebbc3484cdb814f5afb536699
+    image: python:3.13.0-slim-bookworm
+    setup-commands:
+      - pip install pandas==2.2.3
 
 flow:
   - name: Pandas Warmup

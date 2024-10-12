@@ -1,6 +1,7 @@
+import os
 import pandas as pd
 
-df = pd.read_csv('bigfile.log', names=['time', 'value'], dtype={'time': int, 'value': int}, sep=' ',)
+df = pd.read_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bigfile.log'), names=['time', 'value'], dtype={'time': int, 'value': int}, sep=' ',)
 
 df['difference'] = df.time.diff()
 
